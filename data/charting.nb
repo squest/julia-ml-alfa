@@ -1,0 +1,337 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     14057,        328]
+NotebookOptionsPosition[     13709,        310]
+NotebookOutlinePosition[     14083,        327]
+CellTagsIndexPosition[     14040,        324]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+  "SetDirectory", "[", 
+   "\"\</Users/questmac/Public/lambda/julia/julia-ml-alfa/data\>\"", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"data", " ", "=", " ", 
+   RowBox[{"Association", "/@", " ", 
+    RowBox[{"Import", "[", "\"\<complete.json\>\"", "]"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"tdata", " ", "=", " ", 
+    RowBox[{"Map", " ", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"KeyTake", "[", 
+        RowBox[{"#", ",", 
+         RowBox[{"{", 
+          RowBox[{
+          "\"\<pageview\>\"", ",", "\"\<seoduration\>\"", ",", 
+           "\"\<totalduration\>\"", ",", "\"\<revenue\>\""}], "}"}]}], "]"}], 
+       "&"}], ",", " ", "data"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6493954318018827`*^9, 3.649395440753395*^9}, {
+  3.6493960923155622`*^9, 3.649396243689794*^9}, {3.649396757282453*^9, 
+  3.649396760426363*^9}, {3.6493967908549623`*^9, 3.649396796058371*^9}, {
+  3.649397250314405*^9, 3.64939729442097*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "36800"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "59034"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "15550"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "20243"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "30807"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "12800"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "53227"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "64314"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "22330"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "52468"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "77742"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "30315"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "40736"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "74033"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "36205"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "38848"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "76427"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "36136"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "84240"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "123546"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "48294"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "95864"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "140681"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "56521"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "118149"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "183393"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "75239"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "159418"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "248125"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "88122"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "123294"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "230385"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "114990"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "142713"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "0"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "294054"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "105787"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "67421"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "257068"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "106309"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "56478"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "55125"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "48825"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "74192"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "37702"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "112172"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "143177"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "140789"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "40965"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "134293"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "165887"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "176634"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "51900"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "149288"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "172125"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "194165"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "69692"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "145813"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "182528"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "211919"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "77913"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "203162"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "259003"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "284912"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "101235"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "200292"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "289809"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "289812"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "117558"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "233562"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "291667"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "350480"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "153858"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "254778"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "333411"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "393731"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "174183"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "282233"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "403948"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "477435"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "257899"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "245160"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "403022"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "497014"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "240380"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "93511"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "154500"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "139408"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "127096"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "187709"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "273485"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "225065"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "117161"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "225322"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "293900"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "273705"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "133627"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "244507"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "358080"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "317985"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "162450"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "265894"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "363433"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "352025"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "185140"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "271307"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "410930"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "367091"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "195230"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "364663"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "593580"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "521369"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "258013"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "349544"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "626242"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "541716"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "299906"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "385978"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "712319"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "647691"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "380734"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "381030"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "709006"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "655673"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "408075"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "607948"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "1238165"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "1131075"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "660021"}]}], 
+    "\[RightAssociation]"}], ",", 
+   RowBox[{"\[LeftAssociation]", 
+    RowBox[{
+     RowBox[{"\<\"pageview\"\>", "\[Rule]", "306796"}], ",", 
+     RowBox[{"\<\"seoduration\"\>", "\[Rule]", "635428"}], ",", 
+     RowBox[{"\<\"totalduration\"\>", "\[Rule]", "565485"}], ",", 
+     RowBox[{"\<\"revenue\"\>", "\[Rule]", "366528"}]}], 
+    "\[RightAssociation]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.649396791503978*^9}]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification->1.25,
+FrontEndVersion->"10.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 6, \
+2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1084, 28, 120, "Input"],
+Cell[1667, 52, 12026, 255, 771, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
